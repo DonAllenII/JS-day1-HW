@@ -67,6 +67,11 @@ var number = function(busStops){
   }
 
 
+  console.log(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]])); //-> answer is '17'
+  console.log(number([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]])); //-> answer is '21'
+  console.log(number([[0,0]])); //-> answwer is '0'
+
+
 
 //Write a function named first_non_repeating_letter that takes a string input, and returns the first character that is not repeated anywhere in the string.
 //For example, if given the input 'stress', the function should return 't', since the letter t only occurs once in the string, and occurs first in the string.
@@ -98,6 +103,10 @@ function firstNonRepeatingLetter(s) {
     return '';
 }
 
+console.log(firstNonRepeatingLetter('a')); //-> answer is 'a'
+console.log(firstNonRepeatingLetter('stress'));  //-> answer is 't'
+console.log(firstNonRepeatingLetter('moonmen'));  //-> answer is 'e'
+
 
 //Write a function that will return the count of distinct case-insensitive alphabetic
 //characters and numeric digits that occur more than once in the input string. The input
@@ -120,7 +129,7 @@ function duplicateCount(text) {
             if (counter > 1) {
                 finalCount += 1;
                 preExs.push(letter);
-                console.log(preExs);
+                //console.log(preExs);
             }
         }
         counter = 0;
@@ -128,6 +137,11 @@ function duplicateCount(text) {
     
     return finalCount
 }
+
+console.log(duplicateCount('abcde')); //" -> 0 # no characters repeats more than once
+console.log(duplicateCount("aabbcde")); // -> 2 # 'a' and 'b'
+console.log(duplicateCount("aabBcde")); // -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+console.log(duplicateCount("indivisibility")); // -> 1 # 'i' occurs six times
 
 
 //Write a simple parser that will parse and run Deadfish.
@@ -160,3 +174,6 @@ function parse( data ){
   //console.log(x);
   return output;
 }
+
+console.log(parse("iiisdoso"));
+//answer is '64'
